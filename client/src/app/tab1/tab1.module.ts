@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {Tab1Page} from './tab1.page';
 import {ExploreContainerComponentModule} from '../explore-container/explore-container.module';
 import {Tab1PageRoutingModule} from './tab1-routing.module';
-import {HomePageModule} from "../pages/home/home.module";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import {HomePageModule} from "../pages/home/home.module";
         FormsModule,
         ExploreContainerComponentModule,
         Tab1PageRoutingModule,
-        HomePageModule,
+        TranslateModule
     ],
     declarations: [Tab1Page]
 })

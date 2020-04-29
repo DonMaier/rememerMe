@@ -1,12 +1,47 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>shopping-list</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ 'SHOPPING_LIST.title' | translate }}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+
+    <ion-grid style="height: 100%; display: flex; flex-flow: column">
+        <ion-row>
+            <ion-col>
+                <ion-list *ngIf="shoppingLists.length > 0">
+
+                    <ion-item-sliding *ngFor="let list of shoppingLists; let i = index">
+                    <ion-item button detail
+                              [routerLink]="list.shoppingListId">
+                        <ion-label>{{ list.title }}</ion-label>
+                    </ion-item>
+                        <ion-item-options side="end">
+                        <ion-item-option color="danger" expandable (click)="deleteListById(list.shoppingListId)">Delete</ion-item-option>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-list>
+
+                <ion-list *ngIf="showAddPanel">
+                    <ion-item>
+                        <ion-input placeholder="{{ 'SHOPPING_LIST.ph_shopping-list' | translate }}" [(ngModel)]="newShoppingList.title" (focusout)="saveList()" (click)="openKeyBoard()"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row class="fill-row">
+            <ion-col>
+                <ion-button class="fill-button" expand="full" fill="clear" (click)="showAddPanel=!showAddPanel"></ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="showAddPanel=!showAddPanel">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>

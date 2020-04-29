@@ -4,20 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ShoppingListPageRoutingModule } from './shopping-list-routing.module';
+import { ShoppingListItemPageRoutingModule } from './shopping-list-item-routing.module';
 
-import { ShoppingListPage } from './shopping-list.page';
+import { ShoppingListItemPage } from './shopping-list-item.page';
 import {TranslateModule} from "@ngx-translate/core";
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ShoppingListPageRoutingModule,
+    ShoppingListItemPageRoutingModule,
     TranslateModule.forChild()
   ],
-  declarations: [ShoppingListPage]
+  declarations: [ShoppingListItemPage]
 })
-export class ShoppingListPageModule {}
+export class ShoppingListItemPageModule {}

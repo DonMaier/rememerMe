@@ -1,1 +1,33 @@
-<app-home></app-home>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{ 'HOME.title' | translate }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card >
+                    <ion-item >
+                        <ion-icon name="today" slot="start"></ion-icon>
+                        <ion-label>{{ 'HOME.today' | translate }}</ion-label>
+                        <ion-button fill="outline" slot="end">View</ion-button>
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <br/>
+                    <ion-item>
+                        <ion-icon name="fast-food" slot="start"></ion-icon>
+                        <ion-label><ion-label>{{ 'HOME.shopping-lists' | translate }}</ion-label></ion-label>
+                        <ion-button fill="outline" slot="end" [routerLink]="['shopping']">View</ion-button>
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

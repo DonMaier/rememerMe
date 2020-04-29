@@ -20,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, TranslateModule.forRoot({
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+    TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
       useFactory: (HttpLoaderFactory),
