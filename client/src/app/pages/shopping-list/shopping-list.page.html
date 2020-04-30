@@ -17,29 +17,23 @@
                     <ion-item-sliding *ngFor="let list of shoppingLists; let i = index">
                     <ion-item button detail
                               [routerLink]="list.shoppingListId">
-                        <ion-label>{{ list.title }}</ion-label>
+                        <ion-input type="text" [(ngModel)]="list.title" (focusin)="setTempList(list)" (focusout)="saveOrUpdateOrDeleteList(list)"></ion-input>
                     </ion-item>
                         <ion-item-options side="end">
                         <ion-item-option color="danger" expandable (click)="deleteListById(list.shoppingListId)">Delete</ion-item-option>
                         </ion-item-options>
                     </ion-item-sliding>
                 </ion-list>
-
-                <ion-list *ngIf="showAddPanel">
-                    <ion-item>
-                        <ion-input placeholder="{{ 'SHOPPING_LIST.ph_shopping-list' | translate }}" [(ngModel)]="newShoppingList.title" (focusout)="saveList()" (click)="openKeyBoard()"></ion-input>
-                    </ion-item>
-                </ion-list>
             </ion-col>
         </ion-row>
         <ion-row class="fill-row">
             <ion-col>
-                <ion-button class="fill-button" expand="full" fill="clear" (click)="showAddPanel=!showAddPanel"></ion-button>
+                <ion-button class="fill-button" expand="full" fill="clear" (click)="addList()"></ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="showAddPanel=!showAddPanel">
+        <ion-fab-button (click)="addList()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>

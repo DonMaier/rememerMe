@@ -18,6 +18,10 @@ export class ShoppingListItemService {
     return this.httpClient.post(`${environment.serverUrl}shopping-list-items`, listItem, {observe: 'response'}).toPromise();
   }
 
+  updateListItem(listItem: ShoppingListItem) {
+    return this.httpClient.post(`${environment.serverUrl}shopping-list-items/update`, listItem, {observe: 'response'}).toPromise();
+  }
+
   deleteItemById(itemId: number) {
     return this.httpClient.post(`${environment.serverUrl}shopping-list-items/delete/${itemId}`, {observe: 'response'}).toPromise();
   }

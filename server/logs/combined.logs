@@ -1,1 +1,28 @@
 [2020-04-29 11:19:46] info: delete
+[2020-04-30 13:04:20] info: delete
+[2020-04-30 13:11:46] info: delete
+[2020-04-30 13:11:48] info: delete
+[2020-04-30 13:12:20] info: delete
+[2020-04-30 13:12:22] info: delete
+[2020-04-30 13:48:08] info: delete
+[2020-04-30 13:49:51] info: delete
+[2020-04-30 13:50:47] info: delete
+[2020-04-30 13:51:20] info: delete
+[2020-04-30 13:53:50] info: delete
+[2020-04-30 13:55:05] info: delete
+[2020-04-30 13:58:05] info: delete
+[2020-04-30 15:08:15] error: Route [POST /shopping-list-items/:id] Error:syntax error at or near "shopping_list_item_id"
+[2020-04-30 15:09:07] error: Route [POST /shopping-list-items/:id] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:10:17] error: Route [POST /shopping-list-items/:id] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:11:27] error: Route [POST /shopping-list-items/:id] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:11:58] error: Route [POST /shopping-list-items/update] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:13:08] error: Route [POST /shopping-list-items/update] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:14:58] error: Route [POST /shopping-list-items/update] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:15:38] error: Route [POST /shopping-list-items/update] Error:column "image_path" of relation "shopping_list_item" does not exist
+[2020-04-30 15:17:35] error: Route [POST /shopping-list-items/update] Error:column "image" of relation "shopping_list_item" does not exist
+[2020-04-30 15:18:16] error: Route [POST /shopping-list-items/update] Error:column "image" of relation "shopping_list_item" does not exist
+[2020-04-30 15:29:22] error: Route [POST /shopping-list-items/update] Error:column "image" of relation "shopping_list_item" does not exist
+[2020-04-30 15:30:27] error: Route [/task-lists/] Error:column "shopping_task_item_id" does not exist
+[2020-04-30 17:02:25] info: delete
+[2020-04-30 17:03:08] info: delete
+[2020-04-30 17:03:13] info: delete

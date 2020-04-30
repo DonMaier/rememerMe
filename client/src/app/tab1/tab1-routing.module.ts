@@ -6,11 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
-    children: [
-
-    ]
-
-  }
+  },
+  {
+    path: 'shopping',
+    loadChildren: () => import('../pages/shopping-list/shopping-list.module').then(m => m.ShoppingListPageModule)
+  },
 ];
 
 @NgModule({

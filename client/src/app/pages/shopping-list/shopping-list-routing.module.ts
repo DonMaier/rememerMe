@@ -6,6 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: ShoppingListPage
+  },
+  {
+    path: ':id',
+    loadChildren: () =>
+        import('../../pages/shopping-list-item/shopping-list-item.module').then(m => m.ShoppingListItemPageModule)
   }
 ];
 

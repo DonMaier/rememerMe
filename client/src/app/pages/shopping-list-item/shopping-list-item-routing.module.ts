@@ -6,7 +6,11 @@ import { ShoppingListItemPage } from './shopping-list-item.page';
 const routes: Routes = [
   {
     path: '',
-    component: ShoppingListItemPage
+    component: ShoppingListItemPage,
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('../../pages/shopping-list-item-details/shopping-list-item-details.module').then(m => m.ShoppingListItemDetailsPageModule)
   }
 ];
 

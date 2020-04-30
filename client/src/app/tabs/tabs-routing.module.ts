@@ -13,15 +13,6 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-                    },
-                    {
-                        path: 'shopping',
-                        loadChildren: () => import('../pages/shopping-list/shopping-list.module').then(m => m.ShoppingListPageModule)
-                    },
-                    {
-                        path: 'shopping/:id',
-                        loadChildren: () =>
-                            import('../pages/shopping-list-item/shopping-list-item.module').then(m => m.ShoppingListItemPageModule)
                     }
                 ]
             },
