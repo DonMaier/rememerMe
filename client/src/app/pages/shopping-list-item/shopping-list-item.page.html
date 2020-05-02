@@ -4,9 +4,9 @@
             <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-title>ShoppingListItems</ion-title>
-<!--        <ion-buttons slot="end">-->
-<!--            <ion-button>Fertig</ion-button>-->
-<!--        </ion-buttons>-->
+        <ion-buttons slot="end">
+            <ion-button *ngIf="isEditMode" (click)="saveUpdateOrDeleteItem(selectedListItem)">{{ 'SHOPPING_LIST_btn_done' | translate }}</ion-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
@@ -19,10 +19,10 @@
                     <ion-item-sliding *ngFor="let listItem of shoppingListItems; let i = index">
                         <ion-item detail="false">
                             <ion-checkbox></ion-checkbox>
-                            <ion-input [(ngModel)]="listItem.title" (focusin)="setTempListItem(listItem)" (focusout)="saveOrUpdateOrDeleteListItem(listItem)">
+                            <ion-input [(ngModel)]="listItem.title" (focusin)="onFocus(listItem)" (focusout)="onFocusOut()">
                                 <p>{{ listItem.description }}</p>
                             </ion-input>
-                            <ion-button fill="clear" [routerLink]="['details', listItem.shoppingListItemId]">
+                            <ion-button fill="clear" [routerLink]="['details', listItem.shoppingListItemId]" *ngIf="selectedListItem.shoppingListItemId == listItem.shoppingListItemId">
                                 <ion-icon name="information-circle-outline"></ion-icon>
                             </ion-button>
                         </ion-item>
@@ -41,7 +41,7 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="!isEditMode">
         <ion-fab-button (click)="addItemToList()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>

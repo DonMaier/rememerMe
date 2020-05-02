@@ -4,6 +4,9 @@
             <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-title>{{ 'SHOPPING_LIST.title' | translate }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button *ngIf="isEditMode" (click)="saveUpdateOrDeleteList()">{{ 'SHOPPING_LIST_btn_done' | translate }}</ion-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
@@ -13,11 +16,10 @@
         <ion-row>
             <ion-col>
                 <ion-list *ngIf="shoppingLists.length > 0">
-
                     <ion-item-sliding *ngFor="let list of shoppingLists; let i = index">
                     <ion-item button detail
                               [routerLink]="list.shoppingListId">
-                        <ion-input type="text" [(ngModel)]="list.title" (focusin)="setTempList(list)" (focusout)="saveOrUpdateOrDeleteList(list)"></ion-input>
+                        <ion-input type="text" [(ngModel)]="list.title" (focusin)="onFocus(list)" (focusout)="onFocusOut(list)"></ion-input>
                     </ion-item>
                         <ion-item-options side="end">
                         <ion-item-option color="danger" expandable (click)="deleteListById(list.shoppingListId)">Delete</ion-item-option>
@@ -28,13 +30,13 @@
         </ion-row>
         <ion-row class="fill-row">
             <ion-col>
-                <ion-button class="fill-button" expand="full" fill="clear" (click)="addList()"></ion-button>
+                <ion-button id="div-add" class="fill-button" expand="full" fill="clear" (click)="pushList()"></ion-button>
             </ion-col>
         </ion-row>
     </ion-grid>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="addList()">
-            <ion-icon name="add"></ion-icon>
+    <ion-fab  vertical="bottom" horizontal="end" slot="fixed" *ngIf="!isEditMode" >
+        <ion-fab-button >
+            <ion-icon name="add" id="btn-add" (click)="pushList()"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 

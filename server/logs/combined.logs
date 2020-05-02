@@ -26,3 +26,71 @@
 [2020-04-30 17:02:25] info: delete
 [2020-04-30 17:03:08] info: delete
 [2020-04-30 17:03:13] info: delete
+[2020-05-01 13:00:38] info: delete
+[2020-05-01 13:00:39] info: delete
+[2020-05-01 13:00:41] info: delete
+[2020-05-01 13:00:42] info: delete
+[2020-05-01 13:00:54] info: delete
+[2020-05-01 13:13:07] info: delete
+[2020-05-01 13:13:11] info: delete
+[2020-05-01 13:14:40] info: delete
+[2020-05-01 13:14:49] info: delete
+[2020-05-01 13:16:01] info: delete
+[2020-05-01 13:16:14] info: delete
+[2020-05-01 13:17:20] info: delete
+[2020-05-01 13:19:08] info: delete
+[2020-05-01 13:19:09] info: delete
+[2020-05-01 13:19:11] info: delete
+[2020-05-01 13:20:08] info: delete
+[2020-05-01 13:20:41] info: delete
+[2020-05-01 13:21:05] info: delete
+[2020-05-01 13:22:26] info: delete
+[2020-05-01 13:22:55] info: delete
+[2020-05-01 13:25:21] info: delete
+[2020-05-01 13:25:24] info: delete
+[2020-05-01 13:31:12] info: delete
+[2020-05-01 13:31:46] info: delete
+[2020-05-01 13:33:15] info: delete
+[2020-05-01 13:33:48] info: delete
+[2020-05-01 13:33:55] info: delete
+[2020-05-01 13:36:43] info: delete
+[2020-05-01 13:36:45] info: delete
+[2020-05-02 15:11:49] info: delete
+[2020-05-02 15:11:49] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 15:11:59] info: delete
+[2020-05-02 15:11:59] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 15:18:54] info: delete
+[2020-05-02 15:20:05] info: delete
+[2020-05-02 15:21:02] info: delete
+[2020-05-02 15:22:11] info: delete
+[2020-05-02 15:22:11] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 15:30:35] info: delete
+[2020-05-02 15:30:37] info: delete
+[2020-05-02 15:30:39] info: delete
+[2020-05-02 15:37:38] info: delete
+[2020-05-02 15:37:40] info: delete
+[2020-05-02 15:37:41] info: delete
+[2020-05-02 15:37:43] info: delete
+[2020-05-02 15:37:44] info: delete
+[2020-05-02 15:37:45] info: delete
+[2020-05-02 15:37:46] info: delete
+[2020-05-02 15:37:48] info: delete
+[2020-05-02 15:37:50] info: delete
+[2020-05-02 15:45:07] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:00:12] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:32] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:34] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:43] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:53] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:14] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:33] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:44] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:45] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:49] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:03:10] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:03:19] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:03:39] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:04:15] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:04:37] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 18:30:47] info: delete
+[2020-05-02 19:56:45] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "undefined"

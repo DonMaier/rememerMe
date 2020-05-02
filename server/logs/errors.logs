@@ -10,3 +10,23 @@
 [2020-04-30 15:18:16] error: Route [POST /shopping-list-items/update] Error:column "image" of relation "shopping_list_item" does not exist
 [2020-04-30 15:29:22] error: Route [POST /shopping-list-items/update] Error:column "image" of relation "shopping_list_item" does not exist
 [2020-04-30 15:30:27] error: Route [/task-lists/] Error:column "shopping_task_item_id" does not exist
+[2020-05-02 15:11:49] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 15:11:59] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 15:22:11] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 15:45:07] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:00:12] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:32] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:34] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:43] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:01:53] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:14] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:33] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:44] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:45] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:02:49] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:03:10] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:03:19] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:03:39] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:04:15] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 16:04:37] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
+[2020-05-02 19:56:45] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "undefined"

@@ -13,10 +13,11 @@ import {IonInput} from "@ionic/angular";
 })
 export class ShoppingListItemPage implements OnInit {
 
-    newItemAdded = false;
+    isEditMode = false;
+    oldListSize:number;
     shoppingListItems: ShoppingListItem[] = [];
     shoppingListId;
-    tempListItem = new ShoppingListItem(null, '', '', '', this.shoppingListId);
+    selectedListItem = new ShoppingListItem(0, '', '', '', this.shoppingListId);
     @ViewChildren(IonInput) inputs: QueryList<IonInput>;
 
     constructor(private listItemService: ShoppingListItemService,
@@ -32,46 +33,49 @@ export class ShoppingListItemPage implements OnInit {
     ngAfterViewInit(): void {
         this.inputs.changes
             .subscribe((input) => {
-                if(this.newItemAdded) {
+                if(this.inputs.length > this.oldListSize) {
                     setTimeout(async (args) => {
+                        // console.log('event');
                         // Keyboard.show() // for android
 
                         await this.inputs.last.setFocus();
                     },150); //a least 150ms.
                 }
+                this.oldListSize = this.inputs.length;
             })
     }
 
-    async saveOrUpdateOrDeleteListItem(listItem: ShoppingListItem) {
-        console.log('method \'saveOrUpdateOrDeleteListItem\' called.');
-
-        if (listItem.shoppingListItemId == 0) {
-            if (listItem.title.length == 0) {
-                let item = this.shoppingListItems.pop();
-                console.log('deleted item: ', JSON.stringify(item));
+    async saveUpdateOrDeleteItem(item: ShoppingListItem) {
+        console.log('method \'addUpdateOrDeleteItem\' called.');
+        console.log(item);
+        this.isEditMode = false;
+        if (item.shoppingListItemId == 0) {
+            if (item.title.length == 0) {
+                console.log('delete item, since no title has been given');
+                // console.log('after :', JSON.stringify(this.shoppingListItems));
                 return;
             }
             try {
-                let result = await this.listItemService.saveListItem(listItem);
+                let result = await this.listItemService.saveListItem(item);
                 console.log('post returned id: ', result.body['shopping_list_item_id']);
-                listItem.shoppingListItemId = result.body['shopping_list_item_id'];
+                item.shoppingListItemId = result.body['shopping_list_item_id'];
             } catch (error) {
                 console.log('saveList: error: ', error);
             } finally {
 
             }
-        } else {
+        }
 
-            if (listItem.title != this.tempListItem.title) {
-
-
-                if (listItem.title.length == 0) {
-                    console.log('title.length == 0 ---> delete shoppingListItemId: ', listItem.shoppingListItemId);
-                    await this.deleteItemById(listItem.shoppingListItemId);
-                } else {
-                    await this.listItemService.updateListItem(listItem);
-                }
+        else {
+            // if (list.title != this.tempList.title) {
+            if (item.title.length == 0) {
+                console.log('title.length == 0 ---> deleteList shoppingListItemId: ', item.shoppingListItemId);
+                await this.deleteItemById(item.shoppingListItemId);
+            } else {
+                console.log('updateList');
+                await this.listItemService.updateListItem(item);
             }
+            // }
         }
     }
 
@@ -82,10 +86,7 @@ export class ShoppingListItemPage implements OnInit {
             let removeIndex = this.shoppingListItems.map(function (item) {
                 return item.shoppingListItemId;
             }).indexOf(itemId);
-            console.log('davor: ', this.shoppingListItems.length);
-            console.log('removeIndex: ', removeIndex);
             this.shoppingListItems.splice(removeIndex, 1);
-            console.log('danach: ', this.shoppingListItems.length);
         } catch (error) {
             console.log(error);
         } finally {
@@ -94,18 +95,28 @@ export class ShoppingListItemPage implements OnInit {
     }
 
     addItemToList() {
+        console.log('method addItemToList called, isEditMode: ', this.isEditMode);
 
-        if(!this.newItemAdded) {
-            console.log('addList');
+        if (!this.isEditMode) {
             this.shoppingListItems.push(new ShoppingListItem(0, '', '', '', this.shoppingListId));
-            this.newItemAdded = true;
+            this.isEditMode = true;
         } else {
-            this.newItemAdded = false;
+            let result = this.saveUpdateOrDeleteItem(this.selectedListItem);
         }
     }
 
-    setTempListItem(item: ShoppingListItem) {
-        this.tempListItem.title = item.title;
+    onFocus(item: ShoppingListItem) {
+        console.log('method onFocus called');
+        this.selectedListItem = item;
+        console.log('tempListItem: ', JSON.stringify(this.selectedListItem));
+        this.isEditMode = true;
+    }
+
+    onFocusOut() {
+        if(this.shoppingListItems[this.shoppingListItems.length-1].title == '') {
+            this.shoppingListItems.pop();
+        }
+        let result = this.saveUpdateOrDeleteItem(this.selectedListItem);
     }
 
 }
