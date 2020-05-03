@@ -37,3 +37,4 @@ android-template/app/app.iml
 .settings/
 .project
 *.env
+.logs

@@ -44,25 +44,33 @@ export class ShoppingListPage implements OnInit {
     }
 
     onFocus(list: ShoppingList) {
-
+        this.isEditMode = true;
+        this.currList.shoppingListId = list.shoppingListId;
+        this.currList.title = list.title;
+        this.currList.description = list.description;
 
     }
 
     async onFocusOut(list: ShoppingList) {
-        console.log('--------------------------')
+        console.log('--------------------------');
+        this.isEditMode = false;
         console.log('[ onFocusOut ]');
         console.log(list);
-        this.currList = list;
 
-        if(list.title == '') {
+        if (list.title == '') {
             await this.deleteListById(list.shoppingListId);
         } else {
-            if(list.shoppingListId == 0) {
+            if (list.shoppingListId == 0) {
                 let result = await this.shoppingListService.saveShoppingList(list);
                 console.log(result.body['shopping_list_id']);
                 list.shoppingListId = result.body['shopping_list_id'];
             } else {
-                await this.shoppingListService.updateList(list);
+                console.log(this.currList.title);
+                console.log(list.title);
+                if (this.currList.title != list.title) {
+                    console.log('update');
+                    await this.shoppingListService.updateList(list);
+                }
             }
         }
         console.log(this.shoppingLists);
@@ -83,7 +91,6 @@ export class ShoppingListPage implements OnInit {
         }
     }
 
-
     pushList() {
         console.log('--------------------------')
         console.log('[ pushList ]');
@@ -92,7 +99,7 @@ export class ShoppingListPage implements OnInit {
         let newListIndex = this.shoppingLists.map(function (list) {
             return list.shoppingListId;
         }).indexOf(0);
-        if(newListIndex == -1 && this.currList.shoppingListId == 0) { // Wenn in shoppingsLists keine Liste mit ID 0 und ListItem, in dem ich zuletzt war, noch nicht in DB gespeichert wurde (noch keine gültige ID hatte)
+        if (newListIndex == -1 && this.currList.shoppingListId == 0) { // Wenn noch keine Liste hinzugefügt (keine Liste mit ID 0) und zuletzt geklicktes Item nicht in DB gespeicherte Liste ist
             console.log('newListIndex:', newListIndex);
             this.shoppingLists.push(new ShoppingList(0, '', ''));
             console.log(this.shoppingLists);

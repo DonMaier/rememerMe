@@ -94,3 +94,35 @@
 [2020-05-02 16:04:37] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "null"
 [2020-05-02 18:30:47] info: delete
 [2020-05-02 19:56:45] error: Route [POST /shopping-lists/:id] Error:invalid input syntax for integer: "undefined"
+[2020-05-03 09:02:56] info: delete
+[2020-05-03 09:02:58] info: delete
+[2020-05-03 09:02:59] info: delete
+[2020-05-03 09:03:01] info: delete
+[2020-05-03 09:03:14] info: delete
+[2020-05-03 09:05:22] info: delete
+[2020-05-03 09:05:22] error: Route [POST /shopping-list-items/:id] Error:invalid input syntax for integer: "shopping_list_id"
+[2020-05-03 09:07:44] info: delete
+[2020-05-03 09:08:03] info: delete
+[2020-05-03 09:08:10] info: delete
+[2020-05-03 09:10:33] info: delete
+[2020-05-03 09:10:35] info: delete
+[2020-05-03 09:10:36] info: delete
+[2020-05-03 09:10:38] info: delete
+[2020-05-03 09:10:39] info: delete
+[2020-05-03 09:10:41] info: delete
+[2020-05-03 09:10:42] info: delete
+[2020-05-03 09:10:44] info: delete
+[2020-05-03 09:10:45] info: delete
+[2020-05-03 09:10:46] info: delete
+[2020-05-03 09:10:49] info: delete
+[2020-05-03 09:10:51] info: delete
+[2020-05-03 09:10:54] info: delete
+[2020-05-03 09:13:50] info: delete
+[2020-05-03 09:13:51] info: delete
+[2020-05-03 09:14:21] info: delete
+[2020-05-03 09:14:23] info: delete
+[2020-05-03 09:14:24] info: delete
+[2020-05-03 09:14:26] info: delete
+[2020-05-03 09:25:19] info: delete
+[2020-05-03 09:25:36] info: delete
+[2020-05-03 09:25:36] info: delete
