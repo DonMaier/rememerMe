@@ -1,0 +1,8 @@
+{
+  "appId": "rememberme.maier.heinrich",
+  "appName": "rememberme",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

@@ -14,6 +14,11 @@ export class ShoppingListItemService {
   async getListItemsById(shoppingListId) : Promise<ShoppingListItem[]> {
     return this.httpClient.get<ShoppingListItem[]>(`${environment.serverUrl}shopping-list-items/${shoppingListId}`).toPromise();
   }
+
+  async getItemById(itemId) : Promise<ShoppingListItem> {
+    return this.httpClient.get<ShoppingListItem>(`${environment.serverUrl}shopping-list-items/item/${itemId}`).toPromise();
+  }
+
   saveListItem(listItem: ShoppingListItem) {
     return this.httpClient.post(`${environment.serverUrl}shopping-list-items`, listItem, {observe: 'response'}).toPromise();
   }

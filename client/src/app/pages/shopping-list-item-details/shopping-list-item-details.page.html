@@ -7,6 +7,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="stacked">Titel <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" oninput=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Description <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" oninput=""></ion-input>
+    </ion-item>
+
+    <ion-card>
+      <ion-card-content>
+        <img [src]="photo" *ngIf="photo"/>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

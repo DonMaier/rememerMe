@@ -1,0 +1,9 @@
+{
+  "HOME.title" : "TitelEN",
+  "HOME.today":"Today",
+  "SHOPPING_LIST.title": "Shopping List",
+  "HOME.shopping-lists": "Shopping Lists",
+  "SHOPPING_LIST_btn_done": "Done",
+  "SHOPPING_LIST.ph_shopping-list":"Shopping List",
+  "SHOPPING_LIST_ITEM.ph_item": "Food"
+}
