@@ -2,8 +2,14 @@ import {Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/co
 import {ShoppingList} from "../../models/shopping-list";
 import {ShoppingListService} from "../../services/shopping-list.service";
 import {IonInput} from "@ionic/angular";
+import { Plugins, KeyboardInfo } from '@capacitor/core';
+import {Content} from "@angular/compiler/src/render3/r3_ast";
+const { Keyboard } = Plugins;
 
+window.addEventListener('keyboardDidShow', (e) => {
+    console.log("keyboard did show with height", (<any>e).keyboardHeight);
 
+});
 @Component({
     selector: 'app-shopping-list',
     templateUrl: './shopping-list.page.html',
@@ -20,10 +26,11 @@ export class ShoppingListPage implements OnInit {
 
 
     constructor(private shoppingListService: ShoppingListService) {
+
     }
 
     async ngOnInit() {
-
+        // await Keyboard.setScroll({isDisabled:false});
         this.shoppingLists = await this.shoppingListService.getShoppingLists();
         console.log(this.shoppingLists);
     }

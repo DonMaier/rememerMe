@@ -15,6 +15,7 @@
     <ion-grid style="height: 100%; display: flex; flex-flow: column">
         <ion-row>
             <ion-col>
+                <div scrollY="true" id="myFixZone">
                 <ion-list *ngIf="shoppingListItems.length > 0">
                     <ion-item-sliding *ngFor="let listItem of shoppingListItems; let i = index">
                         <ion-item detail="false">
@@ -33,6 +34,7 @@
                         </ion-item-options>
                     </ion-item-sliding>
                 </ion-list>
+                </div>
             </ion-col>
         </ion-row>
         <ion-row class="fill-row">
@@ -41,10 +43,16 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="!isEditMode">
-        <ion-fab-button (click)="pushItem()">
-            <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+
 
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar style="height: 80px" (click)="pushItem()" *ngIf="!isEditMode">
+        <ion-buttons slot="end">
+            <ion-button id="changeText" (click)="pushItem()" style="height: 100px">
+                <ion-icon name="add-circle" style="font-size: 50px; padding-bottom: 25px"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
